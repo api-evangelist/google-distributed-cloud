@@ -1,0 +1,429 @@
+openapi: 3.1.0
+info:
+  title: Google Distributed Cloud Edge Network API
+  description: >-
+    The Distributed Cloud Edge Network API provides programmatic access to
+    manage networking resources for Google Distributed Cloud connected
+    deployments at the edge. It supports creating and managing networks,
+    subnets, routers, and interconnect attachments for edge locations.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/distributed-cloud/edge/latest/docs
+  termsOfService: https://cloud.google.com/terms
+externalDocs:
+  description: Distributed Cloud Edge Network API Documentation
+  url: https://cloud.google.com/distributed-cloud/edge/latest/docs/apis
+servers:
+  - url: https://edgenetwork.googleapis.com/v1
+    description: Production Server
+tags:
+  - name: Networks
+    description: Operations for managing edge networks
+  - name: Subnets
+    description: Operations for managing subnets within edge networks
+  - name: Routers
+    description: Operations for managing edge routers
+  - name: InterconnectAttachments
+    description: Operations for managing interconnect attachments
+  - name: Zones
+    description: Operations for listing available edge zones
+  - name: Operations
+    description: Operations for managing long-running operations
+security:
+  - oauth2: []
+paths:
+  /projects/{projectId}/locations/{location}/zones:
+    get:
+      operationId: listZones
+      summary: List zones
+      description: Lists the available edge zones for a project and location.
+      tags:
+        - Zones
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListZonesResponse'
+  /projects/{projectId}/locations/{location}/zones/{zone}/networks:
+    get:
+      operationId: listNetworks
+      summary: List networks
+      description: Lists all networks in the specified zone.
+      tags:
+        - Networks
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListNetworksResponse'
+    post:
+      operationId: createNetwork
+      summary: Create a network
+      description: Creates a new network in the specified zone.
+      tags:
+        - Networks
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: networkId
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Network'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/zones/{zone}/subnets:
+    get:
+      operationId: listSubnets
+      summary: List subnets
+      description: Lists all subnets in the specified zone.
+      tags:
+        - Subnets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSubnetsResponse'
+    post:
+      operationId: createSubnet
+      summary: Create a subnet
+      description: Creates a new subnet in the specified zone.
+      tags:
+        - Subnets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subnet'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/zones/{zone}/routers:
+    get:
+      operationId: listRouters
+      summary: List routers
+      description: Lists all routers in the specified zone.
+      tags:
+        - Routers
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRoutersResponse'
+    post:
+      operationId: createRouter
+      summary: Create a router
+      description: Creates a new router in the specified zone.
+      tags:
+        - Routers
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: zone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Router'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud resources
+  schemas:
+    Network:
+      type: object
+      description: An edge network resource.
+      properties:
+        name:
+          type: string
+          description: The resource name of the network.
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        description:
+          type: string
+        mtu:
+          type: integer
+          description: Maximum transmission unit in bytes.
+    Subnet:
+      type: object
+      description: An edge subnet resource.
+      properties:
+        name:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        description:
+          type: string
+        network:
+          type: string
+          description: The network this subnet belongs to.
+        ipv4Cidr:
+          type: array
+          items:
+            type: string
+          description: IPv4 CIDR ranges for the subnet.
+        ipv6Cidr:
+          type: array
+          items:
+            type: string
+          description: IPv6 CIDR ranges for the subnet.
+        vlanId:
+          type: integer
+          description: VLAN ID for the subnet.
+    Router:
+      type: object
+      description: An edge router resource.
+      properties:
+        name:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        description:
+          type: string
+        network:
+          type: string
+          description: The network this router belongs to.
+        bgpPeer:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              peerIpAddress:
+                type: string
+              peerAsn:
+                type: integer
+              localAsn:
+                type: integer
+          description: BGP peer configurations.
+        interface:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              ipv4Cidr:
+                type: string
+              subnet:
+                type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+    ListZonesResponse:
+      type: object
+      properties:
+        zones:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              displayName:
+                type: string
+        nextPageToken:
+          type: string
+    ListNetworksResponse:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Network'
+        nextPageToken:
+          type: string
+    ListSubnetsResponse:
+      type: object
+      properties:
+        subnets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subnet'
+        nextPageToken:
+          type: string
+    ListRoutersResponse:
+      type: object
+      properties:
+        routers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Router'
+        nextPageToken:
+          type: string

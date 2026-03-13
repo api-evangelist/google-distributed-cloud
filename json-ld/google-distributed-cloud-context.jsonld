@@ -1,0 +1,72 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "gdc": "https://cloud.google.com/distributed-cloud/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Network": {
+      "@id": "gdc:Network",
+      "@context": {
+        "name": "schema:name",
+        "description": "schema:description",
+        "mtu": "gdc:mtu",
+        "labels": "gdc:labels",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updateTime": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Subnet": {
+      "@id": "gdc:Subnet",
+      "@context": {
+        "name": "schema:name",
+        "description": "schema:description",
+        "network": {
+          "@id": "gdc:network",
+          "@type": "@id"
+        },
+        "ipv4Cidr": "gdc:ipv4Cidr",
+        "ipv6Cidr": "gdc:ipv6Cidr",
+        "vlanId": "gdc:vlanId",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Router": {
+      "@id": "gdc:Router",
+      "@context": {
+        "name": "schema:name",
+        "description": "schema:description",
+        "network": {
+          "@id": "gdc:network",
+          "@type": "@id"
+        },
+        "bgpPeers": "gdc:bgpPeers",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Zone": {
+      "@id": "gdc:Zone",
+      "@context": {
+        "name": "schema:name",
+        "displayName": "schema:alternateName",
+        "location": "schema:location"
+      }
+    }
+  }
+}
