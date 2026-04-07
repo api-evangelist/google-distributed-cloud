@@ -13,12 +13,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Edge Computing
-  - Hybrid Cloud
   - Distributed Infrastructure
+  - Edge Computing
+  - Hardware
+  - Hybrid Cloud
   - Kubernetes
   - On-Premises
-  - Hardware
 apis:
   - name: Distributed Cloud Edge Network API
     description: >-
@@ -32,8 +32,8 @@ apis:
     tags:
       - Edge Network
       - Networking
-      - Subnets
       - Routers
+      - Subnets
     properties:
       - type: Documentation
         url: https://cloud.google.com/distributed-cloud/edge/latest/docs/apis

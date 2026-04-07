@@ -20,16 +20,12 @@ servers:
 tags:
   - name: Networks
     description: Operations for managing edge networks
-  - name: Subnets
-    description: Operations for managing subnets within edge networks
   - name: Routers
     description: Operations for managing edge routers
-  - name: InterconnectAttachments
-    description: Operations for managing interconnect attachments
+  - name: Subnets
+    description: Operations for managing subnets within edge networks
   - name: Zones
     description: Operations for listing available edge zones
-  - name: Operations
-    description: Operations for managing long-running operations
 security:
   - oauth2: []
 paths:
