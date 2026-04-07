@@ -36,7 +36,7 @@ paths:
   /projects/{projectId}/locations/{location}/zones:
     get:
       operationId: listZones
-      summary: List zones
+      summary: Google Distributed Cloud List zones
       description: Lists the available edge zones for a project and location.
       tags:
         - Zones
@@ -61,7 +61,7 @@ paths:
   /projects/{projectId}/locations/{location}/zones/{zone}/networks:
     get:
       operationId: listNetworks
-      summary: List networks
+      summary: Google Distributed Cloud List networks
       description: Lists all networks in the specified zone.
       tags:
         - Networks
@@ -98,7 +98,7 @@ paths:
                 $ref: '#/components/schemas/ListNetworksResponse'
     post:
       operationId: createNetwork
-      summary: Create a network
+      summary: Google Distributed Cloud Create a network
       description: Creates a new network in the specified zone.
       tags:
         - Networks
@@ -139,7 +139,7 @@ paths:
   /projects/{projectId}/locations/{location}/zones/{zone}/subnets:
     get:
       operationId: listSubnets
-      summary: List subnets
+      summary: Google Distributed Cloud List subnets
       description: Lists all subnets in the specified zone.
       tags:
         - Subnets
@@ -168,7 +168,7 @@ paths:
                 $ref: '#/components/schemas/ListSubnetsResponse'
     post:
       operationId: createSubnet
-      summary: Create a subnet
+      summary: Google Distributed Cloud Create a subnet
       description: Creates a new subnet in the specified zone.
       tags:
         - Subnets
@@ -204,7 +204,7 @@ paths:
   /projects/{projectId}/locations/{location}/zones/{zone}/routers:
     get:
       operationId: listRouters
-      summary: List routers
+      summary: Google Distributed Cloud List routers
       description: Lists all routers in the specified zone.
       tags:
         - Routers
@@ -233,7 +233,7 @@ paths:
                 $ref: '#/components/schemas/ListRoutersResponse'
     post:
       operationId: createRouter
-      summary: Create a router
+      summary: Google Distributed Cloud Create a router
       description: Creates a new router in the specified zone.
       tags:
         - Routers
