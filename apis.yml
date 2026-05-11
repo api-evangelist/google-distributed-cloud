@@ -84,6 +84,10 @@ common:
     url: https://cloud.google.com/distributed-cloud/docs/support
   - type: JSON-LD
     url: json-ld/google-distributed-cloud-context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
