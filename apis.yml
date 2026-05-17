@@ -41,7 +41,7 @@ apis:
         url: openapi/distributed-cloud-edge-network-api-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/distributed-cloud/docs/overview
       - type: JSONSchema
         url: json-schema/google-distributed-cloud-network-schema.json
@@ -66,7 +66,7 @@ apis:
 common:
   - type: Portal
     url: https://cloud.google.com/distributed-cloud
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/distributed-cloud/docs/overview
   - type: Documentation
     url: https://cloud.google.com/distributed-cloud/docs
@@ -74,15 +74,15 @@ common:
     url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/distributed-cloud/edge/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/distributed-cloud/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-distributed-cloud-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
