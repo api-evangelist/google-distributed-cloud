@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Distributed Cloud Edge Network API — Zones
+  description: 'Google Distributed Cloud Edge Network API — Zones. 1 operations. Lead operation: Google Distributed Cloud
+    List zones. Self-contained Naftiko capability covering one Google Distributed Cloud business surface.'
+  tags:
+  - Google Distributed Cloud
+  - Zones
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_DISTRIBUTED_CLOUD_API_KEY: GOOGLE_DISTRIBUTED_CLOUD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: distributed-cloud-edge-network-zones
+    baseUri: https://edgenetwork.googleapis.com/v1
+    description: Google Distributed Cloud Edge Network API — Zones business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-zones
+      path: /projects/{projectId}/locations/{location}/zones
+      operations:
+      - name: listzones
+        method: GET
+        description: Google Distributed Cloud List zones
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_DISTRIBUTED_CLOUD_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: distributed-cloud-edge-network-zones-rest
+    port: 8080
+    description: REST adapter for Google Distributed Cloud Edge Network API — Zones. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/zones
+      name: projects-projectid-locations-location-zones
+      description: REST surface for projects-projectId-locations-location-zones.
+      operations:
+      - method: GET
+        name: listzones
+        description: Google Distributed Cloud List zones
+        call: distributed-cloud-edge-network-zones.listzones
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: distributed-cloud-edge-network-zones-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Distributed Cloud Edge Network API — Zones. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-distributed-cloud-list-zones
+      description: Google Distributed Cloud List zones
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: distributed-cloud-edge-network-zones.listzones
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      outputParameters:
+      - type: object
+        mapping: $.

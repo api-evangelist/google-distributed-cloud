@@ -1,0 +1,160 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Distributed Cloud Edge Network API — Networks
+  description: 'Google Distributed Cloud Edge Network API — Networks. 2 operations. Lead operation: Google Distributed Cloud
+    List networks. Self-contained Naftiko capability covering one Google Distributed Cloud business surface.'
+  tags:
+  - Google Distributed Cloud
+  - Networks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_DISTRIBUTED_CLOUD_API_KEY: GOOGLE_DISTRIBUTED_CLOUD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: distributed-cloud-edge-network-networks
+    baseUri: https://edgenetwork.googleapis.com/v1
+    description: Google Distributed Cloud Edge Network API — Networks business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-zones-zone-networks
+      path: /projects/{projectId}/locations/{location}/zones/{zone}/networks
+      operations:
+      - name: listnetworks
+        method: GET
+        description: Google Distributed Cloud List networks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: zone
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createnetwork
+        method: POST
+        description: Google Distributed Cloud Create a network
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: zone
+          in: path
+          type: string
+          required: true
+        - name: networkId
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_DISTRIBUTED_CLOUD_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: distributed-cloud-edge-network-networks-rest
+    port: 8080
+    description: REST adapter for Google Distributed Cloud Edge Network API — Networks. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/zones/{zone}/networks
+      name: projects-projectid-locations-location-zones-zone-networks
+      description: REST surface for projects-projectId-locations-location-zones-zone-networks.
+      operations:
+      - method: GET
+        name: listnetworks
+        description: Google Distributed Cloud List networks
+        call: distributed-cloud-edge-network-networks.listnetworks
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          zone: rest.zone
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createnetwork
+        description: Google Distributed Cloud Create a network
+        call: distributed-cloud-edge-network-networks.createnetwork
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          zone: rest.zone
+          networkId: rest.networkId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: distributed-cloud-edge-network-networks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Distributed Cloud Edge Network API — Networks. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-distributed-cloud-list-networks
+      description: Google Distributed Cloud List networks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: distributed-cloud-edge-network-networks.listnetworks
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        zone: tools.zone
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-distributed-cloud-create-network
+      description: Google Distributed Cloud Create a network
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: distributed-cloud-edge-network-networks.createnetwork
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        zone: tools.zone
+        networkId: tools.networkId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
