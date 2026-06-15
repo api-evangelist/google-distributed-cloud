@@ -1,0 +1,272 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Distributed Cloud Edge Network API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Zones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Distributed Cloud List zones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the available edge zones for a project and location."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Distributed Cloud List networks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/networks",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists all networks in the specified zone."
+        },
+        {
+          "info": {
+            "name": "Google Distributed Cloud Create a network",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/networks",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new network in the specified zone."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subnets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Distributed Cloud List subnets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/subnets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all subnets in the specified zone."
+        },
+        {
+          "info": {
+            "name": "Google Distributed Cloud Create a subnet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/subnets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subnet in the specified zone."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Routers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Distributed Cloud List routers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/routers",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all routers in the specified zone."
+        },
+        {
+          "info": {
+            "name": "Google Distributed Cloud Create a router",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://edgenetwork.googleapis.com/v1/projects/:projectId/locations/:location/zones/:zone/routers",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "zone",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new router in the specified zone."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
