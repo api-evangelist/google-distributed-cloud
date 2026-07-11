@@ -61,6 +61,8 @@ apis:
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
 common:
+  - type: OAuthScopes
+    url: scopes/google-distributed-cloud-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
