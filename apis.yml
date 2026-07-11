@@ -61,6 +61,12 @@ apis:
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-distributed-cloud-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-distributed-cloud-domain-security.yml
+  - type: Authentication
+    url: authentication/google-distributed-cloud-authentication.yml
   - type: OAuthScopes
     url: scopes/google-distributed-cloud-scopes.yml
   - type: GitHubOrganization
