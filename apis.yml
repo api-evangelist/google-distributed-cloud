@@ -61,6 +61,8 @@ apis:
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-distributed-cloud-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-distributed-cloud-vulnerability-disclosure.yml
   - type: DomainSecurity
