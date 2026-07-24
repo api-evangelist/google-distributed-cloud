@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: Google Distributed Cloud Edge Network Networks Routers API
+  description: The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/distributed-cloud/edge/latest/docs
+  termsOfService: https://cloud.google.com/terms
+servers:
+- url: https://edgenetwork.googleapis.com/v1
+  description: Production Server
+security:
+- oauth2: []
+tags:
+- name: Routers
+  description: Operations for managing edge routers
+paths:
+  /projects/{projectId}/locations/{location}/zones/{zone}/routers:
+    get:
+      operationId: listRouters
+      summary: Google Distributed Cloud List routers
+      description: Lists all routers in the specified zone.
+      tags:
+      - Routers
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRoutersResponse'
+    post:
+      operationId: createRouter
+      summary: Google Distributed Cloud Create a router
+      description: Creates a new router in the specified zone.
+      tags:
+      - Routers
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: zone
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Router'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+    Router:
+      type: object
+      description: An edge router resource.
+      properties:
+        name:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        description:
+          type: string
+        network:
+          type: string
+          description: The network this router belongs to.
+        bgpPeer:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              peerIpAddress:
+                type: string
+              peerAsn:
+                type: integer
+              localAsn:
+                type: integer
+          description: BGP peer configurations.
+        interface:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              ipv4Cidr:
+                type: string
+              subnet:
+                type: string
+    ListRoutersResponse:
+      type: object
+      properties:
+        routers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Router'
+        nextPageToken:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud resources
+externalDocs:
+  description: Distributed Cloud Edge Network API Documentation
+  url: https://cloud.google.com/distributed-cloud/edge/latest/docs/apis

@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: Google Distributed Cloud Edge Network Networks Zones API
+  description: The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/distributed-cloud/edge/latest/docs
+  termsOfService: https://cloud.google.com/terms
+servers:
+- url: https://edgenetwork.googleapis.com/v1
+  description: Production Server
+security:
+- oauth2: []
+tags:
+- name: Zones
+  description: Operations for listing available edge zones
+paths:
+  /projects/{projectId}/locations/{location}/zones:
+    get:
+      operationId: listZones
+      summary: Google Distributed Cloud List zones
+      description: Lists the available edge zones for a project and location.
+      tags:
+      - Zones
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListZonesResponse'
+components:
+  schemas:
+    ListZonesResponse:
+      type: object
+      properties:
+        zones:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              displayName:
+                type: string
+        nextPageToken:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud resources
+externalDocs:
+  description: Distributed Cloud Edge Network API Documentation
+  url: https://cloud.google.com/distributed-cloud/edge/latest/docs/apis
