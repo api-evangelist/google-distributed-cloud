@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "e4b469b1-48ad-4678-90ed-f3e8af282e1d",
+    "name": "Google Distributed Cloud Edge Network Networks Zones API",
+    "description": "The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:02.000Z",
+    "updatedAt": "2026-07-28T01:49:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e4b469b1-48ad-4678-90ed-f3e8af282e1d"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "zones",
+                      "item": [
+                        {
+                          "name": "Google Distributed Cloud List zones",
+                          "id": "9cdbe2a1-5bf3-4e35-ba68-8f2fb45fc087",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "zones"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c81544c3-7472-4616-a336-28bbd818840a",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "855c4e41-6f82-4d01-8970-f44b68854a5b",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists the available edge zones for a project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "ead1ddaa-0a82-4962-aeed-571a7e22ace2",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "zones"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"zones\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:49:03.000Z",
+                              "updatedAt": "2026-07-28T01:49:03.000Z",
+                              "uid": "35240-ead1ddaa-0a82-4962-aeed-571a7e22ace2"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:49:03.000Z",
+                          "updatedAt": "2026-07-28T01:49:03.000Z",
+                          "uid": "35240-9cdbe2a1-5bf3-4e35-ba68-8f2fb45fc087"
+                        }
+                      ],
+                      "id": "c334bdca-221f-46fd-86ac-2cabbb6f1be9",
+                      "createdAt": "2026-07-28T01:49:03.000Z",
+                      "updatedAt": "2026-07-28T01:49:03.000Z",
+                      "uid": "35240-c334bdca-221f-46fd-86ac-2cabbb6f1be9"
+                    }
+                  ],
+                  "id": "8bd55673-0ef3-4eeb-92a2-5ae02438d117",
+                  "createdAt": "2026-07-28T01:49:03.000Z",
+                  "updatedAt": "2026-07-28T01:49:03.000Z",
+                  "uid": "35240-8bd55673-0ef3-4eeb-92a2-5ae02438d117"
+                }
+              ],
+              "id": "610883ec-e66b-4f9b-ac0a-1964701b9e52",
+              "createdAt": "2026-07-28T01:49:03.000Z",
+              "updatedAt": "2026-07-28T01:49:03.000Z",
+              "uid": "35240-610883ec-e66b-4f9b-ac0a-1964701b9e52"
+            }
+          ],
+          "id": "c69deb4f-e907-49d4-9a99-edbc422a9013",
+          "createdAt": "2026-07-28T01:49:03.000Z",
+          "updatedAt": "2026-07-28T01:49:03.000Z",
+          "uid": "35240-c69deb4f-e907-49d4-9a99-edbc422a9013"
+        }
+      ],
+      "id": "f302d487-4428-42c0-b549-c58963285ec3",
+      "createdAt": "2026-07-28T01:49:03.000Z",
+      "updatedAt": "2026-07-28T01:49:03.000Z",
+      "uid": "35240-f302d487-4428-42c0-b549-c58963285ec3"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://edgenetwork.googleapis.com/v1"
+    }
+  ]
+}

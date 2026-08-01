@@ -1,0 +1,20 @@
+{
+  "provider": "google-distributed-cloud",
+  "sources": [
+    "google-distributed-cloud-networks-api-openapi.yml",
+    "google-distributed-cloud-routers-api-openapi.yml",
+    "google-distributed-cloud-subnets-api-openapi.yml",
+    "google-distributed-cloud-zones-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-distributed-cloud-networks-api-openapi.yml",
+    "google-distributed-cloud-routers-api-openapi.yml",
+    "google-distributed-cloud-subnets-api-openapi.yml",
+    "google-distributed-cloud-zones-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,368 @@
+{
+  "info": {
+    "_postman_id": "77098438-da00-46e1-a0ab-7daae2a99d8c",
+    "name": "Google Distributed Cloud Edge Network Networks Routers API",
+    "description": "The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:00.000Z",
+    "updatedAt": "2026-07-28T01:49:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-77098438-da00-46e1-a0ab-7daae2a99d8c"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "zones",
+                      "item": [
+                        {
+                          "name": "{zone}",
+                          "item": [
+                            {
+                              "name": "routers",
+                              "item": [
+                                {
+                                  "name": "Google Distributed Cloud List routers",
+                                  "id": "3bfcdb2f-2932-44a6-8829-1e32ba23bdfc",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/routers",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "routers"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "e650efe4-e4ec-4532-aeb6-854cf34ee574",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "3eae592a-94de-40e5-b5d9-64830243056f",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "83e1853a-2480-4710-8bba-ab862ddaed68",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists all routers in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "74e88121-27be-4ee3-9658-596ec6755e43",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/routers",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "routers"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"routers\": [\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"ind8\": \"<string>\",\n        \"site7\": \"<string>\",\n        \"anim_55b\": \"<string>\",\n        \"esse_a7\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"network\": \"<string>\",\n      \"bgpPeer\": [\n        {\n          \"name\": \"<string>\",\n          \"peerIpAddress\": \"<string>\",\n          \"peerAsn\": \"<integer>\",\n          \"localAsn\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"peerIpAddress\": \"<string>\",\n          \"peerAsn\": \"<integer>\",\n          \"localAsn\": \"<integer>\"\n        }\n      ],\n      \"interface\": [\n        {\n          \"name\": \"<string>\",\n          \"ipv4Cidr\": \"<string>\",\n          \"subnet\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"ipv4Cidr\": \"<string>\",\n          \"subnet\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"laborisc_b\": \"<string>\",\n        \"veniam11\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"network\": \"<string>\",\n      \"bgpPeer\": [\n        {\n          \"name\": \"<string>\",\n          \"peerIpAddress\": \"<string>\",\n          \"peerAsn\": \"<integer>\",\n          \"localAsn\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"peerIpAddress\": \"<string>\",\n          \"peerAsn\": \"<integer>\",\n          \"localAsn\": \"<integer>\"\n        }\n      ],\n      \"interface\": [\n        {\n          \"name\": \"<string>\",\n          \"ipv4Cidr\": \"<string>\",\n          \"subnet\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"ipv4Cidr\": \"<string>\",\n          \"subnet\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:01.000Z",
+                                      "updatedAt": "2026-07-28T01:49:01.000Z",
+                                      "uid": "35240-74e88121-27be-4ee3-9658-596ec6755e43"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:01.000Z",
+                                  "updatedAt": "2026-07-28T01:49:01.000Z",
+                                  "uid": "35240-3bfcdb2f-2932-44a6-8829-1e32ba23bdfc"
+                                },
+                                {
+                                  "name": "Google Distributed Cloud Create a router",
+                                  "id": "bae721fa-0127-4502-bcbf-6387ab501186",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"Lorem_29a\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"network\": \"<string>\",\n  \"bgpPeer\": [\n    {\n      \"name\": \"<string>\",\n      \"peerIpAddress\": \"<string>\",\n      \"peerAsn\": \"<integer>\",\n      \"localAsn\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"peerIpAddress\": \"<string>\",\n      \"peerAsn\": \"<integer>\",\n      \"localAsn\": \"<integer>\"\n    }\n  ],\n  \"interface\": [\n    {\n      \"name\": \"<string>\",\n      \"ipv4Cidr\": \"<string>\",\n      \"subnet\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"ipv4Cidr\": \"<string>\",\n      \"subnet\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/routers",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "routers"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "765719d8-c288-4523-92b7-768210850a40",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "dccd3e1c-5929-4eb8-b414-5a546c2f5989",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "a5f8aa32-e158-4a3c-80c2-480bc64835fa",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Creates a new router in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "4dff8009-b0fe-41cf-b084-d08edaf495fe",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"Lorem_29a\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"network\": \"<string>\",\n  \"bgpPeer\": [\n    {\n      \"name\": \"<string>\",\n      \"peerIpAddress\": \"<string>\",\n      \"peerAsn\": \"<integer>\",\n      \"localAsn\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"peerIpAddress\": \"<string>\",\n      \"peerAsn\": \"<integer>\",\n      \"localAsn\": \"<integer>\"\n    }\n  ],\n  \"interface\": [\n    {\n      \"name\": \"<string>\",\n      \"ipv4Cidr\": \"<string>\",\n      \"subnet\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"ipv4Cidr\": \"<string>\",\n      \"subnet\": \"<string>\"\n    }\n  ]\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/routers",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "routers"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:01.000Z",
+                                      "updatedAt": "2026-07-28T01:49:01.000Z",
+                                      "uid": "35240-4dff8009-b0fe-41cf-b084-d08edaf495fe"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:01.000Z",
+                                  "updatedAt": "2026-07-28T01:49:01.000Z",
+                                  "uid": "35240-bae721fa-0127-4502-bcbf-6387ab501186"
+                                }
+                              ],
+                              "id": "464a6a52-32e6-45cb-b4e2-c5436e26eea8",
+                              "createdAt": "2026-07-28T01:49:01.000Z",
+                              "updatedAt": "2026-07-28T01:49:01.000Z",
+                              "uid": "35240-464a6a52-32e6-45cb-b4e2-c5436e26eea8"
+                            }
+                          ],
+                          "id": "ce1f2c1f-0c0f-401c-b78f-3fe9651ca8f4",
+                          "createdAt": "2026-07-28T01:49:01.000Z",
+                          "updatedAt": "2026-07-28T01:49:01.000Z",
+                          "uid": "35240-ce1f2c1f-0c0f-401c-b78f-3fe9651ca8f4"
+                        }
+                      ],
+                      "id": "a1c2b955-ce76-4781-a3f8-58e8e26992a9",
+                      "createdAt": "2026-07-28T01:49:01.000Z",
+                      "updatedAt": "2026-07-28T01:49:01.000Z",
+                      "uid": "35240-a1c2b955-ce76-4781-a3f8-58e8e26992a9"
+                    }
+                  ],
+                  "id": "21d0852f-0dd1-49a2-b5f5-4baffcaab40f",
+                  "createdAt": "2026-07-28T01:49:01.000Z",
+                  "updatedAt": "2026-07-28T01:49:01.000Z",
+                  "uid": "35240-21d0852f-0dd1-49a2-b5f5-4baffcaab40f"
+                }
+              ],
+              "id": "ed6682cd-8e36-4f23-8383-edcf1d540302",
+              "createdAt": "2026-07-28T01:49:01.000Z",
+              "updatedAt": "2026-07-28T01:49:01.000Z",
+              "uid": "35240-ed6682cd-8e36-4f23-8383-edcf1d540302"
+            }
+          ],
+          "id": "4b15bfbc-6cd9-48bd-bb50-b4a626ac910b",
+          "createdAt": "2026-07-28T01:49:01.000Z",
+          "updatedAt": "2026-07-28T01:49:01.000Z",
+          "uid": "35240-4b15bfbc-6cd9-48bd-bb50-b4a626ac910b"
+        }
+      ],
+      "id": "5f3c8df6-695c-467a-9cfa-da2e164149e1",
+      "createdAt": "2026-07-28T01:49:01.000Z",
+      "updatedAt": "2026-07-28T01:49:01.000Z",
+      "uid": "35240-5f3c8df6-695c-467a-9cfa-da2e164149e1"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://edgenetwork.googleapis.com/v1"
+    }
+  ]
+}

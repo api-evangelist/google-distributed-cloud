@@ -1,0 +1,402 @@
+{
+  "info": {
+    "_postman_id": "6579b0fb-2031-4193-957d-63798d14cae6",
+    "name": "Google Distributed Cloud Edge Network Networks API",
+    "description": "The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:59.000Z",
+    "updatedAt": "2026-07-28T01:49:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6579b0fb-2031-4193-957d-63798d14cae6"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "zones",
+                      "item": [
+                        {
+                          "name": "{zone}",
+                          "item": [
+                            {
+                              "name": "networks",
+                              "item": [
+                                {
+                                  "name": "Google Distributed Cloud List networks",
+                                  "id": "fdb0131d-778c-4b8f-86b1-7400a8c10da9",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/networks?pageSize=<integer>&pageToken=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "networks"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "pageSize",
+                                          "value": "<integer>"
+                                        },
+                                        {
+                                          "key": "pageToken",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "4c7b4512-80bf-4044-ab78-4065daa009ec",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "8302c0fc-56ee-406a-a37e-35584a01e950",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "272a54d4-5c89-4173-ba11-e524fb0e7874",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists all networks in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "1739a8ad-05b1-41f7-82f9-98309d099ff8",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/networks?pageSize=<integer>&pageToken=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "networks"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "pageSize",
+                                              "value": "<integer>"
+                                            },
+                                            {
+                                              "key": "pageToken",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"networks\": [\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"irure_9\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"mtu\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"voluptate__6_\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"mtu\": \"<integer>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:00.000Z",
+                                      "updatedAt": "2026-07-28T01:49:00.000Z",
+                                      "uid": "35240-1739a8ad-05b1-41f7-82f9-98309d099ff8"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:00.000Z",
+                                  "updatedAt": "2026-07-28T01:49:00.000Z",
+                                  "uid": "35240-fdb0131d-778c-4b8f-86b1-7400a8c10da9"
+                                },
+                                {
+                                  "name": "Google Distributed Cloud Create a network",
+                                  "id": "293e5272-687d-45e7-a388-379f2da67eb0",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"ipsum_e7\": \"<string>\",\n    \"non50\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"mtu\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/networks?networkId=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "networks"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) ",
+                                          "key": "networkId",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "e78b1e0a-8ac4-4e96-a3c2-e5e84e782737",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "99ca2394-03b8-440f-b56a-519b9eb52d36",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "3fd0693e-295d-43a2-b697-8abc39c48040",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Creates a new network in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "056bb402-a052-41d5-b9dd-e33146e157d8",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"ipsum_e7\": \"<string>\",\n    \"non50\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"mtu\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/networks?networkId=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "networks"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "networkId",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:00.000Z",
+                                      "updatedAt": "2026-07-28T01:49:00.000Z",
+                                      "uid": "35240-056bb402-a052-41d5-b9dd-e33146e157d8"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:00.000Z",
+                                  "updatedAt": "2026-07-28T01:49:00.000Z",
+                                  "uid": "35240-293e5272-687d-45e7-a388-379f2da67eb0"
+                                }
+                              ],
+                              "id": "68e9d839-230e-43d4-bbd2-a645420f207c",
+                              "createdAt": "2026-07-28T01:49:00.000Z",
+                              "updatedAt": "2026-07-28T01:49:00.000Z",
+                              "uid": "35240-68e9d839-230e-43d4-bbd2-a645420f207c"
+                            }
+                          ],
+                          "id": "a0707ffd-eaa6-4508-baf0-f4c1b749b9ed",
+                          "createdAt": "2026-07-28T01:49:00.000Z",
+                          "updatedAt": "2026-07-28T01:49:00.000Z",
+                          "uid": "35240-a0707ffd-eaa6-4508-baf0-f4c1b749b9ed"
+                        }
+                      ],
+                      "id": "994ab44f-3728-49ff-9a22-6c59eaf49d0c",
+                      "createdAt": "2026-07-28T01:49:00.000Z",
+                      "updatedAt": "2026-07-28T01:49:00.000Z",
+                      "uid": "35240-994ab44f-3728-49ff-9a22-6c59eaf49d0c"
+                    }
+                  ],
+                  "id": "14c766c5-7dbe-4a2f-b750-0c2aa5301500",
+                  "createdAt": "2026-07-28T01:49:00.000Z",
+                  "updatedAt": "2026-07-28T01:49:00.000Z",
+                  "uid": "35240-14c766c5-7dbe-4a2f-b750-0c2aa5301500"
+                }
+              ],
+              "id": "80926437-c14b-47a5-9f29-d2381293a55c",
+              "createdAt": "2026-07-28T01:49:00.000Z",
+              "updatedAt": "2026-07-28T01:49:00.000Z",
+              "uid": "35240-80926437-c14b-47a5-9f29-d2381293a55c"
+            }
+          ],
+          "id": "3f4b8a3a-c786-438d-831b-96dd8f73abbc",
+          "createdAt": "2026-07-28T01:49:00.000Z",
+          "updatedAt": "2026-07-28T01:49:00.000Z",
+          "uid": "35240-3f4b8a3a-c786-438d-831b-96dd8f73abbc"
+        }
+      ],
+      "id": "303da2f2-5dae-4374-91d9-b2f15196665b",
+      "createdAt": "2026-07-28T01:49:00.000Z",
+      "updatedAt": "2026-07-28T01:49:00.000Z",
+      "uid": "35240-303da2f2-5dae-4374-91d9-b2f15196665b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://edgenetwork.googleapis.com/v1"
+    }
+  ]
+}

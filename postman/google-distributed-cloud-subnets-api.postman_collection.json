@@ -1,0 +1,368 @@
+{
+  "info": {
+    "_postman_id": "68ff5bb2-5561-4be3-bd4d-cec4fb077ca7",
+    "name": "Google Distributed Cloud Edge Network Networks Subnets API",
+    "description": "The Distributed Cloud Edge Network API provides programmatic access to manage networking resources for Google Distributed Cloud connected deployments at the edge. It supports creating and managing networks, subnets, routers, and interconnect attachments for edge locations.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:01.000Z",
+    "updatedAt": "2026-07-28T01:49:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-68ff5bb2-5561-4be3-bd4d-cec4fb077ca7"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "zones",
+                      "item": [
+                        {
+                          "name": "{zone}",
+                          "item": [
+                            {
+                              "name": "subnets",
+                              "item": [
+                                {
+                                  "name": "Google Distributed Cloud List subnets",
+                                  "id": "964e8215-e801-4da5-bcba-974c7226ebea",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/subnets",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "subnets"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "ca8cb243-1546-43e1-9669-3662bb26e630",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "276b1d94-56b0-4824-a75a-a21255e508cf",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "0f2711e0-ba7f-4ba0-bca2-ac5d50238606",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists all subnets in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "5696e1da-90ab-44bb-b104-89f187c7dad0",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/subnets",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "subnets"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"subnets\": [\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"veniam728\": \"<string>\",\n        \"id_231\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"network\": \"<string>\",\n      \"ipv4Cidr\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ipv6Cidr\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"vlanId\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"reprehenderit7\": \"<string>\"\n      },\n      \"description\": \"<string>\",\n      \"network\": \"<string>\",\n      \"ipv4Cidr\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ipv6Cidr\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"vlanId\": \"<integer>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:02.000Z",
+                                      "updatedAt": "2026-07-28T01:49:02.000Z",
+                                      "uid": "35240-5696e1da-90ab-44bb-b104-89f187c7dad0"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:02.000Z",
+                                  "updatedAt": "2026-07-28T01:49:02.000Z",
+                                  "uid": "35240-964e8215-e801-4da5-bcba-974c7226ebea"
+                                },
+                                {
+                                  "name": "Google Distributed Cloud Create a subnet",
+                                  "id": "13045c3b-df4d-43a2-8206-040e102c3970",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"incididunt62\": \"<string>\",\n    \"dolor_aa9\": \"<string>\",\n    \"cupidatat7\": \"<string>\",\n    \"culpa_7\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"network\": \"<string>\",\n  \"ipv4Cidr\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ipv6Cidr\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vlanId\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/subnets",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "zones",
+                                        ":zone",
+                                        "subnets"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "3578e8fb-64df-46eb-a982-96eeea64f69f",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "330844ab-f11f-4c8c-82b9-2a10d386e106",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "fa541ab3-f119-4f66-a6f2-8bdace49545e",
+                                          "key": "zone",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Creates a new subnet in the specified zone."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "ebe30cdc-6eeb-4857-9197-bfc2b6d02a94",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"incididunt62\": \"<string>\",\n    \"dolor_aa9\": \"<string>\",\n    \"cupidatat7\": \"<string>\",\n    \"culpa_7\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"network\": \"<string>\",\n  \"ipv4Cidr\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ipv6Cidr\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vlanId\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/zones/:zone/subnets",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "zones",
+                                            ":zone",
+                                            "subnets"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "zone"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\"\n}",
+                                      "createdAt": "2026-07-28T01:49:02.000Z",
+                                      "updatedAt": "2026-07-28T01:49:02.000Z",
+                                      "uid": "35240-ebe30cdc-6eeb-4857-9197-bfc2b6d02a94"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:49:02.000Z",
+                                  "updatedAt": "2026-07-28T01:49:02.000Z",
+                                  "uid": "35240-13045c3b-df4d-43a2-8206-040e102c3970"
+                                }
+                              ],
+                              "id": "d0fc780f-6b4c-4d2d-8ef6-cfa129d5f377",
+                              "createdAt": "2026-07-28T01:49:02.000Z",
+                              "updatedAt": "2026-07-28T01:49:02.000Z",
+                              "uid": "35240-d0fc780f-6b4c-4d2d-8ef6-cfa129d5f377"
+                            }
+                          ],
+                          "id": "1411a464-c8cf-4163-8f8d-09d95955539e",
+                          "createdAt": "2026-07-28T01:49:02.000Z",
+                          "updatedAt": "2026-07-28T01:49:02.000Z",
+                          "uid": "35240-1411a464-c8cf-4163-8f8d-09d95955539e"
+                        }
+                      ],
+                      "id": "2d21c929-4aac-4eb3-96b3-a460672d7518",
+                      "createdAt": "2026-07-28T01:49:02.000Z",
+                      "updatedAt": "2026-07-28T01:49:02.000Z",
+                      "uid": "35240-2d21c929-4aac-4eb3-96b3-a460672d7518"
+                    }
+                  ],
+                  "id": "c5435625-f145-42b6-a7fc-7b1fb928393a",
+                  "createdAt": "2026-07-28T01:49:02.000Z",
+                  "updatedAt": "2026-07-28T01:49:02.000Z",
+                  "uid": "35240-c5435625-f145-42b6-a7fc-7b1fb928393a"
+                }
+              ],
+              "id": "d4c4d337-8a18-4346-8315-c6dbbb3230a7",
+              "createdAt": "2026-07-28T01:49:02.000Z",
+              "updatedAt": "2026-07-28T01:49:02.000Z",
+              "uid": "35240-d4c4d337-8a18-4346-8315-c6dbbb3230a7"
+            }
+          ],
+          "id": "bc86ca05-6762-40bf-abf4-93b43c7ff4e2",
+          "createdAt": "2026-07-28T01:49:02.000Z",
+          "updatedAt": "2026-07-28T01:49:02.000Z",
+          "uid": "35240-bc86ca05-6762-40bf-abf4-93b43c7ff4e2"
+        }
+      ],
+      "id": "ee4e5f36-b32e-4157-80ed-299887b21a70",
+      "createdAt": "2026-07-28T01:49:02.000Z",
+      "updatedAt": "2026-07-28T01:49:02.000Z",
+      "uid": "35240-ee4e5f36-b32e-4157-80ed-299887b21a70"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://edgenetwork.googleapis.com/v1"
+    }
+  ]
+}
