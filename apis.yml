@@ -73,6 +73,8 @@ apis:
   humanURL: https://cloud.google.com/distributed-cloud/edge/latest/docs
   baseURL: https://edgenetwork.googleapis.com
   tags:
+  - Router
+  tags_raw:
   - Routers
   properties:
   - type: OpenAPI
