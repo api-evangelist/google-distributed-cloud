@@ -96,6 +96,22 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    ListNetworksResponse:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Network'
+        nextPageToken:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
     Network:
       type: object
       description: An edge network resource.
@@ -118,22 +134,6 @@ components:
         mtu:
           type: integer
           description: Maximum transmission unit in bytes.
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-    ListNetworksResponse:
-      type: object
-      properties:
-        networks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Network'
-        nextPageToken:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

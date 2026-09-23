@@ -1,10 +1,7 @@
 {
   "provider": "google-distributed-cloud",
   "sources": [
-    "google-distributed-cloud-networks-api-openapi.yml",
-    "google-distributed-cloud-routers-api-openapi.yml",
-    "google-distributed-cloud-subnets-api-openapi.yml",
-    "google-distributed-cloud-zones-api-openapi.yml"
+    "_original/distributed-cloud-edge-network-api-openapi.yml"
   ],
   "outputs": [
     "google-distributed-cloud-networks-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-distributed-cloud-networks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-distributed-cloud-routers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-distributed-cloud-subnets-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-distributed-cloud-zones-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "distributed-cloud-edge-network-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-distributed-cloud-networks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-distributed-cloud-routers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-distributed-cloud-subnets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-distributed-cloud-zones-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
