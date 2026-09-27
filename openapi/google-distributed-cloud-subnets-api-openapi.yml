@@ -83,13 +83,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
     Subnet:
       type: object
       description: An edge subnet resource.
@@ -124,6 +117,13 @@ components:
         vlanId:
           type: integer
           description: VLAN ID for the subnet.
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
     ListSubnetsResponse:
       type: object
       properties:
