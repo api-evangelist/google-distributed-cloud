@@ -92,6 +92,13 @@ components:
             $ref: '#/components/schemas/Router'
         nextPageToken:
           type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
     Router:
       type: object
       description: An edge router resource.
@@ -138,13 +145,6 @@ components:
                 type: string
               subnet:
                 type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
   securitySchemes:
     oauth2:
       type: oauth2
