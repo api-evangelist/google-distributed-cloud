@@ -1,0 +1,46 @@
+slug: google-distributed-cloud
+provider: Google Distributed Cloud
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Networks
+  spec_file: google-distributed-cloud-networks-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.9
+  evidence: POST /projects/{projectId}/locations/{location}/zones/{zone}/networks  createNetwork  Create
+    a network; 'manage networking resources for Google Distributed Cloud connected deployments at the
+    edge'
+  reason: Provisioning of cloud/edge network resources is IT infrastructure management (compute, storage,
+    network, cloud).
+- tag: Routers
+  spec_file: google-distributed-cloud-routers-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.9
+  evidence: POST /projects/{projectId}/locations/{location}/zones/{zone}/routers  createRouter  Create
+    a router; schema Router
+  reason: Creating and listing edge routers is network infrastructure provisioning, squarely IT Infrastructure
+    Management.
+- tag: Subnets
+  spec_file: google-distributed-cloud-subnets-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.9
+  evidence: POST /projects/{projectId}/locations/{location}/zones/{zone}/subnets  createSubnet  Create
+    a subnet; schema Subnet
+  reason: Subnet creation and listing is network/cloud infrastructure provisioning under IT Infrastructure
+    Management.

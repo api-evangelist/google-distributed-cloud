@@ -136,6 +136,9 @@ apis:
   - type: JSONSchema
     url: json-schema/google-distributed-cloud-network-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-distributed-cloud-capability-edges.yml
+    name: Google Distributed Cloud Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
