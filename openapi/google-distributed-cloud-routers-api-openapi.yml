@@ -90,15 +90,6 @@ components:
           type: string
         done:
           type: boolean
-    ListRoutersResponse:
-      type: object
-      properties:
-        routers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Router'
-        nextPageToken:
-          type: string
     Router:
       type: object
       description: An edge router resource.
@@ -145,6 +136,15 @@ components:
                 type: string
               subnet:
                 type: string
+    ListRoutersResponse:
+      type: object
+      properties:
+        routers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Router'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

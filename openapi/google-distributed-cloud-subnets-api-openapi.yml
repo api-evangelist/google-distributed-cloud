@@ -90,6 +90,15 @@ components:
           type: string
         done:
           type: boolean
+    ListSubnetsResponse:
+      type: object
+      properties:
+        subnets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subnet'
+        nextPageToken:
+          type: string
     Subnet:
       type: object
       description: An edge subnet resource.
@@ -124,15 +133,6 @@ components:
         vlanId:
           type: integer
           description: VLAN ID for the subnet.
-    ListSubnetsResponse:
-      type: object
-      properties:
-        subnets:
-          type: array
-          items:
-            $ref: '#/components/schemas/Subnet'
-        nextPageToken:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
